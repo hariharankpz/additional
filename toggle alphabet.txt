@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class Main
+{
+public static void main(String args[])
+{
+Scanner in = new Scanner(System.in);
+ char ch = in.next().charAt(0);
+  int offset;
+  if(ch >= 'a' && ch <= 'z')
+  {
+    ch = (char) (ch - 32);
+  }
+  else
+  {
+    ch = (char) (ch + 32);
+  }
+  System.out.print(ch);
+  
+}
+}
+
+********************************************************************************or***************
+import java.util.Scanner;
+class Main{
+  public static void main(String args[]) {
+    Scanner in = new Scanner(System.in);
+    char ch = in.next().charAt(0);
+    if(ch >= 'a' && ch <= 'z'){
+      int offset = ch - 'a';
+      ch = (char)('A' + offset);
+    }
+    else if(ch >= 'A' && ch <= 'Z'){
+        int offset = ch - 'A';
+        ch = (char)('a' + offset);
+    }
+    System.out.print(ch);
+  }
+}
