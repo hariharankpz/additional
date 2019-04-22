@@ -1,0 +1,47 @@
+In the previous lesson, you learnt how to solve rearranging problems using arrays. Now, get ready to learn statistical problems using arrays.
+
++ 
+
+Here is your first challenge:
+
+Write a Java code to convert a decimal number to binary number.
+
+
+
+Sample Input:
+
+		23
+
+
+
+Sample Output:
+
+		1 0 1 1 1
+
+
+
+
+
+
+import java.util.Scanner;
+class Main
+{
+   public static void main(String args[])
+   {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt();
+       int count = 0;
+       int arr[] = new int[100];
+       while(num != 0)
+       {
+           int rem = num % 2;
+           arr[count++] = rem;
+           num /= 2;
+       }
+       for( int index = count - 1; index >= 0; index--)
+       {
+           System.out.print(arr[index] + " ");
+       }
+   }
+}
++ 

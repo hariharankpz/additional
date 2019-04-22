@@ -1,0 +1,61 @@
+Here's your first challenge:
+
+Given an array, write a Java code to generate a random permutation of the array elements.  ????????
+
+
+
+Sample input:
+
+Array Size - 5
+
+Array: list[] = {10, 20, 30, 40, 50}
+
+shuffle_order[] = {3, 4, 2, 1, 0}
+
+
+
+Sample Output:
+
+list[] = {50, 40, 30, 10, 20}
+
+(Hint: Permutation means the action of changing the arrangement, especially the linear order of a set of items)
+
+
+
+
+import java.util.Scanner;
+class Main
+?{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int list[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            list[i] = sc.nextInt();
+        }
+        int temp[] = new int[n];
+        int shuffle_order[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            shuffle_order[i] = sc.nextInt();
+        }
+        int des_idx = 0;
+        for (int index_1 = 0 ; index_1<n; index_1++)
+        {
+            des_idx = shuffle_order[index_1];
+            temp[des_idx] = list[index_1];
+        }
+        for (int index_1 = 0 ; index_1<n; index_1++)
+        {
+            list[index_1] = temp[index_1];
+        }
+        for (int index = 0 ; index<n;index++)
+        {
+            System.out.print(list[index]+" ");
+        }
+    }
+}
+
+

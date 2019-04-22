@@ -1,0 +1,53 @@
+Here is your next challenge:
+
+Write a Java code to find the second maximum element in an array without sorting that array.
+
+
+
+Sample Input:
+
+		arr_size = 5
+
+		arr[] = {7, 5, 9, 2, 3}
+
+
+
+Sample Output:
+
+		7
+
+import java.util.Scanner;
+class Main
+{
+   public static void main(String args[])
+   {
+       Scanner sc = new Scanner(System.in);
+       
+int arr_size = sc.nextInt();
+       int arr[] = new int[arr_size];
+       for(int index = 0; index < arr_size; index++)
+       {
+           arr[index] = sc.nextInt();
+       }
+       int max_idx =0;
+       int max_no = 0;
+       int sec_max_no = 0;
+       for(int index = 0; index < arr_size; index++)
+       {
+           if(arr[index] > max_no)
+           {
+              max_idx = index;  
+              max_no = arr[index];
+           }
+       }
+
+      for(int index = 0; index < arr_size; index++)
+       {
+           if((index != max_idx ) && (sec_max_no < arr[index]) && max_no != arr[index])
+           {
+               sec_max_no = arr[index];
+           }
+       }
+       System.out.println(sec_max_no);
+   }
+}
